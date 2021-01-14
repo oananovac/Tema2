@@ -307,14 +307,14 @@ public class ControllerApp {
 
     /**
      * This method is used to configure the Logger member through which the
-     * display history will be written in the log file "logFile.log".
+     * display history will be written in the log file "logFile.txt".
      * Logger needs a handler and a formatter to open the file in append mode
      * and to write data to it.
      */
     private void configureLogger() {
         FileHandler fileHandler;
         try {
-            fileHandler = new FileHandler("src/main/resources/logFile.log",
+            fileHandler = new FileHandler("src/main/resources/logFile.txt",
                     true);
             logger.addHandler(fileHandler);
             SimpleFormatter formatter = new SimpleFormatter();
