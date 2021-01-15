@@ -212,3 +212,7 @@ Jan 15, 2021 2:16:11 AM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Brasov, RO : 2021-01-15 at 02:16:10 EET : Snow, light snow, -5.69 °C , wind = 1.79 m/s, humidity = 86.0%, image = http://openweathermap.org/img/wn/13n@2x.png
 Jan 15, 2021 2:16:13 AM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Bucharest, RO : 2021-01-15 at 02:16:13 EET : Mist, mist, -1.81 °C , wind = 2.06 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/50n@2x.png
+Jan 15, 2021 2:31:32 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Alexandria, EG : 2021-01-15 at 02:31:32 EET : Clouds, scattered clouds, 15 °C , wind = 6.17 m/s, humidity = 72.0%, image = http://openweathermap.org/img/wn/03n@2x.png
+Jan 15, 2021 2:31:35 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Cairo, EG : 2021-01-15 at 02:31:35 EET : Clouds, few clouds, 15.09 °C , wind = 4.63 m/s, humidity = 59.0%, image = http://openweathermap.org/img/wn/02n@2x.png
