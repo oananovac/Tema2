@@ -7,10 +7,8 @@ import ro.mta.se.lab.model.City;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 /**
  * <h1>ControllerAppTest</h1>
@@ -34,31 +32,32 @@ public class ControllerAppTest {
     /**
      * This function provides help for testing by creating a list of cities
      * through mock objects.
+     *
      * @return the specific list.
      */
-    public List<City> addCities(){
+    public List<City> addCities() {
         List<City> listOfCities = new ArrayList<City>();
         mockCity = new City();
 
         mockCity.setId(2643743);
         mockCity.setName("London");
         mockCity.setCountry("GB");
-        mockCity.setLatitude((float)51.50853);
-        mockCity.setLongitude((float)(-0.12574));
+        mockCity.setLatitude((float) 51.50853);
+        mockCity.setLongitude((float) (-0.12574));
         listOfCities.add(mockCity);
 
         mockCity.setId(658225);
         mockCity.setName("Helsinki");
         mockCity.setCountry("FI");
-        mockCity.setLatitude((float)60.16952);
-        mockCity.setLongitude((float)24.93545);
+        mockCity.setLatitude((float) 60.16952);
+        mockCity.setLongitude((float) 24.93545);
         listOfCities.add(mockCity);
 
         mockCity.setId(683506);
         mockCity.setName("Brasov");
         mockCity.setCountry("RO");
-        mockCity.setLatitude((float)45.648609);
-        mockCity.setLongitude((float)25.606131);
+        mockCity.setLatitude((float) 45.648609);
+        mockCity.setLongitude((float) 25.606131);
         listOfCities.add(mockCity);
 
         return listOfCities;
@@ -92,7 +91,7 @@ public class ControllerAppTest {
     @Test
     public void setCityListTest() {
         instance.setCityList();
-        assertEquals(3,instance.cityList.size());
+        assertEquals(3, instance.cityList.size());
         verify(mockRead).getListCities();
     }
 
@@ -107,7 +106,7 @@ public class ControllerAppTest {
     public void setCityByNameTest() {
         instance.setCityList();
         instance.setCityByName("Brasov");
-        assertEquals("Brasov",instance.currentCity.getName());
+        assertEquals("Brasov", instance.currentCity.getName());
         verify(mockRead).getListCities();
     }
 
