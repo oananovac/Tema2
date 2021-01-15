@@ -1,8 +1,6 @@
 package ro.mta.se.lab.controller;
 
-
 import org.json.JSONObject;
-import ro.mta.se.lab.model.Weather;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,54 +30,84 @@ public class GetWeatherData {
      * Members description
      */
     private final StringBuffer weatherData;
-    private HttpURLConnection connection;
     private Integer cityId;
+    private String apiKey;
+    private String urlString;
 
     /**
      * Constructor of GetWeatherData class
-     *
-     * @param cityId The weather search is based on the city ID
      */
-    public GetWeatherData(Integer cityId) {
+    public GetWeatherData() {
         this.weatherData = new StringBuffer();
-        this.cityId = cityId;
+        this.cityId = 0;
+        this.apiKey = new String();
+        this.urlString = new String();
     }
 
     /**
      * This method parses the string in json format returned by server and
-     * creates a Weather object to which it sets the parameters
+     * creates an array of strings which contains all the parameters of
+     * Weather class.
      *
      * @param myJson The json string received from the server
-     * @return the Weather object created
+     * @return the array with Weather characteristics
      */
-    private static Weather getWeatherData(String myJson) {
-        Weather currentWeather = new Weather();
-
+    public String[] parseData(String myJson) {
         JSONObject jsonObject = new JSONObject(myJson);
-        currentWeather.setDescription(jsonObject.getJSONArray("weather").getJSONObject(0).getString("description"));
-        currentWeather.setMain(jsonObject.getJSONArray("weather").getJSONObject(0).getString("main"));
-        currentWeather.setIcon(jsonObject.getJSONArray("weather").getJSONObject(0).getString("icon"));
-        currentWeather.setTemperature(jsonObject.getJSONObject("main").getFloat("temp"));
-        currentWeather.setHumidity(jsonObject.getJSONObject("main").getFloat("humidity"));
-        currentWeather.setWind(jsonObject.getJSONObject("wind").getFloat("speed"));
 
-        return currentWeather;
+        String parsed[] = new String[6];
+        Float myFloat;
+
+        parsed[0] = jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
+        parsed[1] = jsonObject.getJSONArray("weather").getJSONObject(0).getString("main");
+        parsed[2] = jsonObject.getJSONArray("weather").getJSONObject(0).getString("icon");
+        myFloat = jsonObject.getJSONObject("main").getFloat("temp");
+        parsed[3] = myFloat.toString();
+        myFloat = jsonObject.getJSONObject("main").getFloat("humidity");
+        parsed[4] = myFloat.toString();
+        myFloat = jsonObject.getJSONObject("wind").getFloat("speed");
+        parsed[5] = myFloat.toString();
+
+        return parsed;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+    /**
+     * This method provides the url for connection to API server.
+     *
+     * @param cityId The id of city for which weather data are obtained.
+     * @param apiKey The key used to connect to the server.
+     * @return url in string format
+     */
+    public String getUrlStringById(String cityId, String apiKey) {
+        return "http://api.openweathermap.org/data/2.5/weather?id=" + cityId
+                + "&appid=" + apiKey;
     }
 
     /**
      * In this method the connection with API is made, is checked and the data
-     * stream is stored in weatherData member line by line.
+     * stream is stored in a string buffer line by line.
+     *
+     * @param apiKey    The key used to connect to the server.
+     * @param urlString The url for connection to API server.
+     * @return string buffer which contains the json data of weather.
      */
-    private void obtainJSONData() {
+    public StringBuffer obtainJSONData(String apiKey, String urlString) {
         BufferedReader reader;
         String line;
+        StringBuffer data = new StringBuffer();
+        HttpURLConnection connection;
 
         try {
-            String apiKey = "ed5023c5edf0f36887d312934e014c0d";
-            String urlString = "http://api.openweathermap.org/data/2.5/weather?id="
-                    + this.cityId + "&appid=" + apiKey;
             URL url = new URL(urlString);
-            this.connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) url.openConnection();
 
             // Request setup
             connection.setRequestMethod("GET");
@@ -92,34 +120,38 @@ public class GetWeatherData {
                 // error and it is read error stream
                 reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
                 while ((line = reader.readLine()) != null) {
-                    this.weatherData.append(line);
+                    data.append(line);
                 }
                 reader.close();
             } else {
                 // The connection was established and it is read input stream
                 reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 while ((line = reader.readLine()) != null) {
-                    this.weatherData.append(line);
+                    data.append(line);
                 }
                 reader.close();
             }
+            connection.disconnect();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            connection.disconnect();
+
         }
+        return data;
     }
 
     /**
-     * This method calls the two previous private methods to extract and parse
-     * information. This method is a public one and it can be called outside.
+     * This method calls the two previous methods to extract and parse
+     * information.
      *
-     * @return the Weather object extracted according to the specific city.
+     * @return parsed data that is stored into a string buffer.
      */
-    public Weather getCurrentWeather() {
-        obtainJSONData();
-        return getWeatherData(this.weatherData.toString());
+    public String[] getCurrentWeather() {
+        setApiKey("ed5023c5edf0f36887d312934e014c0d");
+        StringBuffer myJson = obtainJSONData(this.apiKey,
+                getUrlStringById(this.cityId.toString(), this.apiKey));
+
+        return parseData(myJson.toString());
     }
 }

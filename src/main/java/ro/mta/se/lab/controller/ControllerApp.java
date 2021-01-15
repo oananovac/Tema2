@@ -26,6 +26,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -55,11 +56,11 @@ public class ControllerApp {
     /**
      * Members description
      */
-    private final ReadInputFile myReadInputFile;
-    private final List<City> cityList;
-    private final Logger logger;
-    private City currentCity;
-    private Weather currentWeather;
+    public ReadInputFile myReadInputFile;
+    public List<City> cityList;
+    public Logger logger;
+    public City currentCity;
+    public Weather currentWeather;
 
     /**
      * Description of members that links to the elements of the fxml file
@@ -98,7 +99,7 @@ public class ControllerApp {
      */
     public ControllerApp() {
         this.myReadInputFile = new ReadInputFile();
-        this.cityList = myReadInputFile.getListCities();
+        this.cityList = new LinkedList<City>();
         this.currentCity = new City();
         this.currentWeather = new Weather();
         this.logger = Logger.getLogger("Weather App Logs");
@@ -124,6 +125,7 @@ public class ControllerApp {
      */
     @FXML
     private void initialize() {
+        this.setCityList();
         this.configureLogger();
 
         // Hide buttons
@@ -166,8 +168,7 @@ public class ControllerApp {
                     buttonFahn.setVisible(true);
 
                     // Obtain weather data for current city
-                    GetWeatherData obj = new GetWeatherData(currentCity.getId());
-                    currentWeather = obj.getCurrentWeather();
+                    setCurrentWeather();
 
                     // Write data to user interface
                     labelCity.setText(currentCity.getName()
@@ -219,7 +220,7 @@ public class ControllerApp {
      *
      * @return sorted list of countries.
      */
-    private ObservableList<String> getCountryList() {
+    public ObservableList<String> getCountryList() {
         ObservableList<String> countries = new SimpleListProperty<String>(FXCollections.observableArrayList());
         for (City c : this.cityList) {
             if (!countries.contains(c.getCountry())) {
@@ -237,7 +238,7 @@ public class ControllerApp {
      * @param country The country for which the list of cities is created.
      * @return sorted list of cities.
      */
-    private ObservableList<String> getCitiesList(String country) {
+    public ObservableList<String> getCitiesList(String country) {
         ObservableList<String> cities = new SimpleListProperty<String>(FXCollections.observableArrayList());
         for (City c : this.cityList) {
             if (c.getCountry().equals(country)) {
@@ -256,7 +257,7 @@ public class ControllerApp {
      *
      * @param name The name of the city that is selected by the user.
      */
-    private void setCityByName(String name) {
+    public void setCityByName(String name) {
         for (City c : this.cityList) {
             if (c.getName().equals(name)) {
                 this.currentCity = c;
@@ -325,5 +326,31 @@ public class ControllerApp {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * This method is used to obtain the data of the currentWeather. It is
+     * instantiated a GetWeatherData object, it is set the id of current city
+     * and the data is returned as an array of strings.
+     */
+    private void setCurrentWeather() {
+        GetWeatherData obj = new GetWeatherData();
+        obj.setCityId(currentCity.getId());
+        String data[] = obj.getCurrentWeather();
+
+        currentWeather.setDescription(data[0]);
+        currentWeather.setMain(data[1]);
+        currentWeather.setIcon(data[2]);
+        currentWeather.setTemperature(Float.parseFloat(data[3]));
+        currentWeather.setHumidity(Float.parseFloat(data[4]));
+        currentWeather.setWind(Float.parseFloat(data[5]));
+    }
+
+    /**
+     * This method calls the getListCities() method of ReadInputFile class in
+     * order to set the the member list which contains all cities.
+     */
+    public void setCityList() {
+        this.cityList = myReadInputFile.getListCities();
     }
 }

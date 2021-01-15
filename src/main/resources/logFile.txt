@@ -190,3 +190,25 @@ Jan 14, 2021 3:51:30 PM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Bordeaux, FR : 2021-01-14 at 15:51:30 EET : Drizzle, drizzle, 10 °C , wind = 7.2 m/s, humidity = 100.0%, image = http://openweathermap.org/img/wn/09d@2x.png
 Jan 14, 2021 3:51:45 PM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Paris, FR : 2021-01-14 at 15:51:45 EET : Clouds, overcast clouds, 10.78 °C , wind = 6.17 m/s, humidity = 87.0%, image = http://openweathermap.org/img/wn/04d@2x.png
+Jan 14, 2021 8:28:45 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Alexandria, EG : 2021-01-14 at 20:28:44 EET : Clouds, scattered clouds, 16 °C , wind = 6.69 m/s, humidity = 72.0%, image = http://openweathermap.org/img/wn/03n@2x.png
+Jan 14, 2021 8:28:48 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Cairo, EG : 2021-01-14 at 20:28:48 EET : Clouds, few clouds, 16.84 °C , wind = 4.12 m/s, humidity = 51.0%, image = http://openweathermap.org/img/wn/02n@2x.png
+Jan 14, 2021 8:28:55 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Bordeaux, FR : 2021-01-14 at 20:28:54 EET : Clouds, broken clouds, 10 °C , wind = 5.14 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/04n@2x.png
+Jan 14, 2021 8:28:59 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Paris, FR : 2021-01-14 at 20:28:58 EET : Clouds, overcast clouds, 9.46 °C , wind = 9.26 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/04n@2x.png
+Jan 14, 2021 9:22:20 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Bordeaux, FR : 2021-01-14 at 21:22:20 EET : Clouds, overcast clouds, 9.84 °C , wind = 5.66 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/04n@2x.png
+Jan 15, 2021 2:15:48 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Cairo, EG : 2021-01-15 at 02:15:48 EET : Clouds, few clouds, 14.12 °C , wind = 4.63 m/s, humidity = 59.0%, image = http://openweathermap.org/img/wn/02n@2x.png
+Jan 15, 2021 2:15:55 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Helsinki, FI : 2021-01-15 at 02:15:54 EET : Clear, clear sky, -22 °C , wind = 4.63 m/s, humidity = 77.0%, image = http://openweathermap.org/img/wn/01n@2x.png
+Jan 15, 2021 2:15:57 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Turku, FI : 2021-01-15 at 02:15:57 EET : Clear, clear sky, -22 °C , wind = 1.03 m/s, humidity = 84.0%, image = http://openweathermap.org/img/wn/01n@2x.png
+Jan 15, 2021 2:16:02 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Helsinki, FI : 2021-01-15 at 02:16:02 EET : Clear, clear sky, -22 °C , wind = 4.63 m/s, humidity = 77.0%, image = http://openweathermap.org/img/wn/01n@2x.png
+Jan 15, 2021 2:16:11 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Brasov, RO : 2021-01-15 at 02:16:10 EET : Snow, light snow, -5.69 °C , wind = 1.79 m/s, humidity = 86.0%, image = http://openweathermap.org/img/wn/13n@2x.png
+Jan 15, 2021 2:16:13 AM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Bucharest, RO : 2021-01-15 at 02:16:13 EET : Mist, mist, -1.81 °C , wind = 2.06 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/50n@2x.png
