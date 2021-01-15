@@ -216,3 +216,5 @@ Jan 15, 2021 2:31:32 AM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Alexandria, EG : 2021-01-15 at 02:31:32 EET : Clouds, scattered clouds, 15 °C , wind = 6.17 m/s, humidity = 72.0%, image = http://openweathermap.org/img/wn/03n@2x.png
 Jan 15, 2021 2:31:35 AM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Cairo, EG : 2021-01-15 at 02:31:35 EET : Clouds, few clouds, 15.09 °C , wind = 4.63 m/s, humidity = 59.0%, image = http://openweathermap.org/img/wn/02n@2x.png
+Jan 15, 2021 5:27:44 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Bucharest, RO : 2021-01-15 at 17:27:43 EET : Clear, clear sky, 0.16 °C , wind = 2.57 m/s, humidity = 74.0%, image = http://openweathermap.org/img/wn/01n@2x.png
