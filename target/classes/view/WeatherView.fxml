@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" layoutX="5.0" prefHeight="400.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ChoiceBox fx:id="choiceCountry" layoutX="286.0" layoutY="92.0" prefWidth="150.0" style="-fx-background-color: LIGHTBLUE; -fx-border-color: #0a3d51; -fx-border-width: 1;" />
+      <Text fill="#2e99ba" fontSmoothingType="LCD" layoutX="110.0" layoutY="53.0" opacity="0.87" stroke="#144554" strokeType="OUTSIDE" strokeWidth="2.0" text="Your Weather App">
+         <font>
+            <Font name="Kristen ITC" size="38.0" />
+         </font>
+      </Text>
+      <Text fill="#0b5574" layoutX="128.0" layoutY="111.0" stroke="#0a3d51" strokeType="OUTSIDE" strokeWidth="0.2" text="Select Country :">
+         <font>
+            <Font name="Kristen ITC" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#0b5574" layoutX="162.0" layoutY="150.0" stroke="#0a3d51" strokeType="OUTSIDE" strokeWidth="0.2" text="Select City :">
+         <font>
+            <Font name="Kristen ITC" size="18.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="choiceCity" layoutX="286.0" layoutY="131.0" prefWidth="150.0" style="-fx-background-color: LIGHTBLUE; -fx-border-color: #0a3d51; -fx-border-width: 1;" />
+      <VBox layoutX="6.0" layoutY="193.0" prefHeight="90.0" prefWidth="243.0">
+         <children>
+            <Label fx:id="labelCity" contentDisplay="CENTER" prefHeight="43.0" prefWidth="285.0" textAlignment="RIGHT" textFill="#0a2f3d">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.59" />
+               </effect>
+            </Label>
+            <Label fx:id="labelTime" contentDisplay="CENTER" prefHeight="27.0" prefWidth="276.0" textAlignment="RIGHT" textFill="#0b5574">
+               <font>
+                  <Font name="Kristen ITC" size="16.0" />
+               </font>
+            </Label>
+         </children></VBox>
+      <GridPane layoutX="14.0" layoutY="289.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.20000457763672" minWidth="10.0" prefWidth="99.99995880126954" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.20001678466798" minWidth="10.0" prefWidth="101.60004119873048" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelHumidity" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="158.0" textAlignment="RIGHT" textFill="#0b5574">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelWind" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="158.0" textAlignment="RIGHT" textFill="#0b5574" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelHum" contentDisplay="CENTER" prefHeight="30.0" prefWidth="158.0" textAlignment="RIGHT" textFill="#073649" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelWin" contentDisplay="CENTER" prefHeight="30.0" prefWidth="158.0" textAlignment="RIGHT" textFill="#073649" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Label fx:id="labelWeather" alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="193.0" prefHeight="46.0" prefWidth="306.0" textAlignment="RIGHT" textFill="#0b5574">
+         <font>
+            <Font name="Kristen ITC" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTemp" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="236.0" layoutY="248.0" prefHeight="70.0" prefWidth="175.0" textAlignment="RIGHT" textFill="#0b5574">
+         <font>
+            <Font name="Kristen ITC" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonCelsius" layoutX="246.0" layoutY="335.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="Celsius" textFill="#2581c7">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonFahn" layoutX="331.0" layoutY="335.0" mnemonicParsing="false" text="Fahrenheit" textFill="#2581c7">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="144.0" fitWidth="145.0" layoutX="418.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
