@@ -110,4 +110,22 @@ public class ControllerAppTest {
         verify(mockRead).getListCities();
     }
 
+    /**
+     * Testing of convertKelvinToCelsius() method without using mock objects.
+     */
+    @Test
+    public void convertKelvinToCelsiusTest(){
+        assertEquals("27.86",
+                instance.convertKelvinToCelsius((float)301.0));
+    }
+
+    /**
+     * Testing of convertKelvinToFahrenheit() method without using mock objects.
+     */
+    @Test
+    public void convertKelvinToFahrenheitTest(){
+        assertEquals("82.13",
+                instance.convertKelvinToFahrenheit((float)301.0));
+    }
+
 }
