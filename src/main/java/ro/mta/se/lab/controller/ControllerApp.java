@@ -285,7 +285,7 @@ public class ControllerApp {
      * @param temp The temperature value in Kelvin degrees.
      * @return the temperature value in Celsius degrees.
      */
-    private String convertKelvinToCelsius(Float temp) {
+    public String convertKelvinToCelsius(Float temp) {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
         Double celsiusTemp = temp - 273.15;
@@ -299,7 +299,7 @@ public class ControllerApp {
      * @param temp The temperature value in Kelvin degrees.
      * @return the temperature value in Fahrenheit degrees.
      */
-    private String convertKelvinToFahrenheit(Float temp) {
+    public String convertKelvinToFahrenheit(Float temp) {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
         Double celsiusTemp = (temp * 9.0) / 5.0 - 459.67;

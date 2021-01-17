@@ -220,3 +220,5 @@ Jan 15, 2021 5:27:44 PM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: Bucharest, RO : 2021-01-15 at 17:27:43 EET : Clear, clear sky, 0.16 °C , wind = 2.57 m/s, humidity = 74.0%, image = http://openweathermap.org/img/wn/01n@2x.png
 Jan 16, 2021 11:42:08 AM ro.mta.se.lab.controller.ControllerApp$2 changed
 INFO: London, GB : 2021-01-16 at 11:42:08 EET : Rain, moderate rain, 3.58 °C , wind = 3.6 m/s, humidity = 93.0%, image = http://openweathermap.org/img/wn/10d@2x.png
+Jan 16, 2021 2:49:55 PM ro.mta.se.lab.controller.ControllerApp$2 changed
+INFO: Turku, FI : 2021-01-16 at 14:49:54 EET : Snow, light snow, -11.39 °C , wind = 2.57 m/s, humidity = 85.0%, image = http://openweathermap.org/img/wn/13d@2x.png
